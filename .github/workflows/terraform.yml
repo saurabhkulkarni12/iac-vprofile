@@ -1,4 +1,4 @@
-name: "Vprofile IAC"
+name: "ProductCRUDApp IAC"
 on:
   push:
     branches:
@@ -16,7 +16,7 @@ env:
  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
  AWS_REGION: us-east-1
- EKS_CLUSTER: vprofile-eks
+ EKS_CLUSTER: productcrudapp-eks
 
 jobs:
   terraform:
@@ -33,7 +33,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.6.3
+          terraform_version: 1.12.2
         #  cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: Terraform init
         id: init
